@@ -1,0 +1,80 @@
+<html>
+
+<head>
+	
+	<title>Music backoffice</title>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/sound_controller.css">
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+
+<body>
+	
+<div id="canvas_div"></div>	
+
+<div class="controller_inner">
+	
+	<div class="controller_wrapper">
+
+		<ul class="controller_controls controller-list-nostyle">
+
+			<li class="controller_playPause">
+
+				<button class="play controller_icon controller-button-nostyle">Play / Pause</button>
+
+			</li>
+			<li class="controller_timeline controller-clearfix">
+			
+				<div class="timeline controller controller-clearfix">
+				
+					<div class="timeline_timePassed">-:--</div>
+					<div class="timeline_progressWrapper">
+					
+						<div class="timeline_progressBackground"></div>
+						<div class="timeline_progressBar"></div>
+						<div class="timeline_progressHandler"></div>
+					
+					</div>
+					<div class="timeline_duration">-:--</div>
+				
+				</div>
+				
+			</li>
+			<li class="controller_volume">
+				
+				<div class="volume">
+				
+					<div class="volume_wrapper">
+					
+						<button class="volume_button controller_icon controller-button-nostyle">Volume</button>
+					
+					</div>
+				
+				</div>
+				
+			</li>
+			<li class="controller_musicName">
+			
+				<div class="musicName"></div>
+				
+			</li>
+		</ul>
+
+	</div>
+	
+</div>
+	
+</body>
+	
+<!-- LIBS -->
+<script type="text/javascript" src="libs/jquery-2.1.3.js"></script>
+	
+<!-- JS -->
+<script type="text/javascript" src="js/Tools.js"></script>
+<script type="text/javascript" src="js/AudioController.js"></script>
+<script type="text/javascript" src="js/TimelineInterface.js"></script>
+<script type="text/javascript" src="js/App.js"></script>
+	
+</html>

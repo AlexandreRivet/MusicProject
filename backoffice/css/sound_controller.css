@@ -1,0 +1,235 @@
+button {
+
+	-webkit-appearance: button;
+	cursor: pointer;
+	
+}
+
+.controller-clearfix:before,
+.controller-clearfix:after {
+
+	content: "";
+	display: table;
+	
+}
+
+.controller-clearfix:after {
+
+	clear: both;
+	
+}
+
+.controller_wrapper {
+	
+	position: relative;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+	
+}
+
+.controller-list-nostyle {
+	
+	list-style: none;
+	margin: 0 auto;
+	
+}
+
+.controller-button-nostyle {
+
+	border: 0;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	background-color: transparent;
+	
+}
+
+.controller_controls {
+
+	position: relative;
+	
+}
+
+.controller_playPause {
+
+	float: left;
+	
+}
+
+.controller_icon {
+
+	border: 0;
+	height: 50px;
+	position: relative;
+	float left;
+	
+}
+
+.play {
+	
+	width: 50px;
+	margin: 0 10px;
+	
+	background: url('../images/play-arrow.svg') no-repeat center;
+	
+}
+
+.play.is-playing {
+	
+	background: url('../images/pause-bars.svg') no-repeat center;
+	
+}
+
+.controller_timeline {
+
+	float: left;
+	
+}
+
+.controller_volume {
+	
+	float: left;
+	
+}
+
+
+/* TIMELINE */
+
+.timeline {
+
+	float: left;
+	
+}
+
+.timeline,
+.timeline_progressWrapper:hover {
+
+	cursor: pointer;
+}
+
+.timeline_progressWrapper.is-dragging, .timeline_progressWrapper:hover .timeline_progressHandler {
+
+	opacity: 1;
+	
+}
+
+.timeline_timePassed,
+.timeline_progressWrapper, 
+.timeline_duration {
+
+	float: left;
+	line-height: 50px;
+	
+}
+
+.timeline_timePassed,
+.timeline_duration {
+
+	width: 40px;
+	height: 50px;
+	
+}
+
+
+.timeline_timePassed {
+
+	text-align: right;
+	color: #eeeeee;	
+	
+}
+
+.timeline_progressWrapper {
+
+	position: relative;
+	width: 500px;
+	padding: 10px 0;
+	margin: 13px 10px 0 10px;
+	
+}
+
+.timeline_progressBackground,
+.timeline_progressBar,
+.timeline_progressHandler {
+
+	position: absolute;
+	
+}
+
+.timeline_progressBackground {
+	
+	width: 100%;
+	height: 4px;
+	background-color: #eeeeee;
+	border-radius: 5px;
+	
+}
+
+.timeline_progressBar {
+
+	width: 0px;
+	height: 4px;
+	background-color: #3498db;
+	border-radius: 5px;
+	
+}
+
+.timeline_progressHandler {
+	
+	border: 1px solid #3498db;
+	border-radius: 100%;
+	height: 15px;
+	width: 15px;
+	background-color: #3498db;
+	box-sizing: border-box;
+	top: 50%;
+	margin-top: -6px;
+	margin-left: -6px;
+	opacity: 0;
+	transition: opacity 150ms;
+}
+
+.timeline_duration {
+	
+	text-align: left;
+	color: #eeeeee;	
+	
+}
+
+.volume {
+	
+	position: relative;
+	
+}
+
+.volume_wrapper {
+
+	position: relative;
+	
+}
+
+.volume_button {
+	
+	width: 50px;
+	margin: 0 10px;
+
+	background: url('../images/volume-up.svg') no-repeat center;
+	
+}
+
+
+.volume_button.muted {
+	
+	background: url('../images/volume-off.svg') no-repeat center;
+	
+}
+
+.musicName {
+	
+	line-height: 50px;
+	color: #eeeeee;
+	max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+	
+}

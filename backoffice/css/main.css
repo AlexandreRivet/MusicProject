@@ -1,0 +1,22 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#canvas_div {
+	display: block;
+	width: 100%;
+	height: calc(100% - 51px);
+	background-color: #333333;
+}
+
+
+
+.controller_inner {
+	
+	background-color: #333333;
+	border-top: 1px solid #eeeeee;
+	width: 100%;
+	height: 50px;
+	
+}
