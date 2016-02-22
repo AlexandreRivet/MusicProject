@@ -52,6 +52,18 @@ function init() {
 
 	App.begin();
 	
+	debugger;
+	
+	// Test d'une track  ==> Suite aux premiers tests, cela fonctionne, reste peut être les cas d'égalité à gérer
+	var t = new Track();
+	t.addNote(new Note(0, 5000));
+	t.addNote(new Note(1, 5500, 10000));
+	t.addNote(new Note(0, 9000));
+	t.addNote(new Note(0, 11000));
+	t.addNote(new Note(1, 2000, 4500));
+	t.addNote(new Note(0, 5400));
+	t.addNote(new Note(1, 4500, 4900));
+	
 }
 
 $(document).ready(function() {

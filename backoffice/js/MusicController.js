@@ -56,6 +56,68 @@ Track.prototype.addNote = function(note) {
 	// On peut ajouter une note longue du moment qu'il n'y a aucune note entre son start et end
 	// Dans tous les cas, il faut chopper la note d'avant et d'après par rapport à celle que l'on veut ajouter
 	
+	var prev = null;
+	var next = null;
+	
+	for (var i = 0; i < this.m_timers.length; i++) {
+	
+		var timer = this.m_timers[i];
+		
+		if (note.m_start > timer)
+			prev = i;
+		
+		if (note.m_start < timer && next == null)
+			next = i;
+		
+		if (prev != null && next != null)
+			break;
+		
+	}
+	
+	// Y'a personne dans le tableau
+	if (prev == null && next == null)
+	{
+		this.m_timers.push(note.m_start);
+		this.m_notes[note.m_start] = note;
+	}
+	// En théorie, elle doit de mettre au début
+	else if (prev == null && next != null)
+	{
+		var nextNote = this.m_notes[this.m_timers[next]];
+		if (note.m_type != 1 || (note.m_type == 1 && note.m_end < nextNote.m_start))
+		{
+			this.m_timers.splice(0, 0, note.m_start);
+			this.m_notes[note.m_start] = note;
+		}
+	}
+	// En théorie, elle doit être à la fin
+	else if (prev != null && next == null)
+	{
+		var prevNote = this.m_notes[this.m_timers[prev]];
+		if (prevNote.m_type != 1 || (prevNote.m_type == 1 && prevNote.m_end < note.m_start))
+		{
+			this.m_timers.push(note.m_start);
+			this.m_notes[note.m_start] = note;
+		}
+	}
+	// En théorie, elle doit être insérée entre deux
+	else
+	{
+		var prevNote = this.m_notes[this.m_timers[prev]];
+		var nextNote = this.m_notes[this.m_timers[next]];
+		
+		// On teste sur la prev
+		if (prevNote.m_type != 1 || (prevNote.m_type == 1 && prevNote.m_end < note.m_start))
+		{
+			// On teste sur la next
+			if (note.m_type != 1 || (note.m_type == 1 && note.m_end < nextNote.m_start))
+			{
+				this.m_timers.splice(next, 0, note.m_start);
+				this.m_notes[note.m_start] = note;
+			}
+		}
+		
+	}
 	
 };
 
@@ -132,7 +194,7 @@ Note.prototype._checkLogic = function() {
 		
 	}
 	// Cas où le start dépasse le end
-	else if (this.m_start > this.m_end) {
+	else if (this.m_start > this.m_end && this.m_type == 1) {
 	
 		var tmp = this.m_start;
 		this.m_start = this.m_end;
